@@ -8,7 +8,7 @@ class FavoritelistList extends Component {
   constructor() {
     super()
     this.state = {
-      playlists: [],
+      favoritelists: [],
       selectedFavoritelist: null
     }
     this.favoritelistStore = new FavoritelistStore()
