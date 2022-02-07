@@ -22,7 +22,7 @@ class FavoritelistDetails extends Component {
   }
   componentDidMount() {
     this.videoStore.getVideos(this.props.item.id)
-    this.videoStore.emitter.addListener('GET_CREW_SUCCESS', () => {
+    this.videoStore.emitter.addListener('GET_VIDEO_SUCCESS', () => {
       this.setState({
         videos: this.videoStore.videos
       })
@@ -36,7 +36,7 @@ class FavoritelistDetails extends Component {
         {
           this.state.videos.map((e, i) => <Video key={i} item={e} onDelete={this.delete} onSave={this.save} />)
         }
-        <Video onAdd={this.add} />
+        <VideoForm onAdd={this.add} />
       </div>
       <div>
         <input type="button" value="back" onClick={() => this.props.onCancel()} />
